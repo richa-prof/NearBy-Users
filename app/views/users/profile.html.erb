@@ -1,0 +1,27 @@
+<h3>Profile</h3>
+<div>
+  <ul>
+    <li><b>Name:</b> <%= @user.name if @user.name %></li>
+    <li><b>Email:</b> <%= @user.email if @user.email %></li>
+  </ul>
+</div>
+<% if @user.address.present? %>
+  <div>
+    <ul>
+      <li><b>Address:</b> <%= @user.address if @user.address %></li>
+      <li><b>Latitude :</b> <%= @user.latitude if @user.latitude %></li>
+      <li><b>Longitude :</b> <%= @user.longitude if @user.longitude %></li>
+    </ul>
+  </div>
+
+  <h4>People Near Me</h4>
+  <ul class="near_by">
+  <% if near_by = @user.nearbys(10) %>
+    <% for user in near_by %>
+      <li><%= user.name %> (<%= user.distance.round(2) %> miles)</li>
+    <% end %>
+  <% end %>
+  </ul>
+<% else %>
+  <p class="note">Update your address to see near by users. </p>
+<% end %>
