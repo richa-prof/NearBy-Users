@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -23,3 +24,6 @@ Things you may want to cover:
 
 * ...
 # rails_demo
+=======
+# NearBy-Users
+>>>>>>> 760a0b535d4e7f573945a229d829e448e064416f
